@@ -1,0 +1,8 @@
+/* Custom styles for SVG icons */
+.icon {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    vertical-align: middle;
+}
+
