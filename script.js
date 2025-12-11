@@ -3,67 +3,131 @@ const caseStudies = {
     zambia: {
         flag: '🇿🇲',
         country: 'Zambia',
-        sector: 'Livestock Sector',
+        sector: 'Digital Transformation of the Livestock Sector',
         status: 'active',
-        description: 'Zambia aims to transition from fragmented, paper-based livestock management to a cohesive, data-driven governance ecosystem capable of improving food safety, disease control, export readiness, and climate resilience.',
-        pillars: ['Traceability & Sanitary Compliance', 'Predictive Risk Monitoring', 'Data-driven Policy'],
+        strategicContext: {
+            title: 'Strategic Context & Rationale',
+            content: [
+                'Livestock is a cornerstone of Zambia\'s rural economy, food security, and export potential. Yet the sector faces systemic constraints, including fragmented animal health information, limited disease surveillance, and lack of end-to-end traceability — all of which undermine sanitary compliance, market access, and climate resilience.',
+                'Against this backdrop, Zambia\'s digital livestock agenda represents a strategic opportunity to strengthen national innovation capacity, reduce information asymmetries, and modernize agricultural value chains in alignment with the Global Digital Compact Objective 2 and AIM Global\'s shift "from Alliance to Solutions."'
+            ]
+        },
+        transformationVision: {
+            title: 'Transformation Vision',
+            overview: 'Zambia aims to establish a national Animal Identification and Traceability System (AITS) that goes significantly beyond traditional tagging or paper-based reporting. The envisioned integrated system would:',
+            objectives: [
+                'Enhance food safety and consumer trust',
+                'Strengthen disease detection and rapid response',
+                'Improve sanitary compliance for regional and international markets',
+                'Increase climate and environmental resilience',
+                'Enable evidence-based agricultural planning and enforcement'
+            ],
+            outputs: [
+                {
+                    name: 'National Livestock Identification System (NLIS)',
+                    description: 'Unique identification and end-to-end traceability'
+                },
+                {
+                    name: 'Predictive Livestock Early Warning System (PLEWS)',
+                    description: 'Integrated monitoring of animal and environmental risks powered by analytics and Earth Observation'
+                },
+                {
+                    name: 'National Livestock Intelligence Platform (NLIP)',
+                    description: 'A unified data backbone for policymaking, inspection, and enforcement'
+                }
+            ],
+            conclusion: 'Together, they represent a sector-wide digital transformation pathway, fully aligned with UNIDO\'s approach to strengthening innovation ecosystems through CoEs and digital solutions.'
+        },
         readiness: {
             infrastructure: { 
                 level: 'moderate', 
+                title: 'Digital Infrastructure Readiness',
                 findings: [
-                    'Existing livestock records remain largely paper-based, but pilot digital systems are emerging',
-                    'Connectivity varies across rural districts, affecting real-time reporting',
-                    'Earth Observation and meteorological data are available but not yet integrated into livestock workflows'
+                    'Livestock data is still predominantly paper-based, creating delays and inconsistencies',
+                    'Connectivity in rural districts and border areas remains variable',
+                    'EO/satellite data is available but not yet integrated into veterinary workflows'
                 ],
-                implication: 'Digital foundations exist but require coordinated investment for national scale'
+                implication: 'Infrastructure can support pilots but requires targeted investment for scale'
             },
             governance: { 
-                level: 'low', 
+                level: 'moderate', 
+                title: 'Data Governance Readiness',
                 findings: [
-                    'Data is dispersed across ministries with limited interoperability',
-                    'No unified national livestock data model or standards',
-                    'Quality assurance and metadata practices are ad hoc'
+                    'No unified national livestock data model or reference standards',
+                    'Data sits in disconnected systems across ministries, lacking interoperability rules or APIs',
+                    'Quality assurance, metadata, and validation processes are not institutionalized'
                 ],
-                implication: 'Strong potential for a national livestock information backbone, but foundational governance rules must be developed'
+                implication: 'A governance framework is essential before NLIS, PLEWS, or NLIP can scale'
             },
             aiml: { 
                 level: 'emerging', 
+                title: 'AI/ML Readiness',
                 findings: [
-                    'Early-warning use cases (e.g., drought signals, disease anomalies) are technically promising',
-                    'Historical datasets are limited or inconsistent, constraining robust model training'
+                    'Clear use cases exist for forecasting, anomaly detection, and environmental risk profiling',
+                    'However, historical datasets are fragmented or incomplete, limiting model training'
                 ],
-                implication: 'AI should be phased in responsibly, beginning with simple analytics and gradually moving toward predictive systems as data matures'
+                implication: 'Begin with rule-based analytics; phase in ML once data improves'
             },
             policy: { 
                 level: 'high', 
+                title: 'Policy & Regulatory Readiness',
                 findings: [
-                    'Zambia\'s livestock policies acknowledge sanitary compliance and export competitiveness',
-                    'Regional and international standards (OIE, Codex) create clear compliance incentives'
+                    'National sanitary regulations and export ambitions create a strong incentive for traceability',
+                    'Alignment with international standards (e.g., OIE, Codex) supports system adoption'
                 ],
-                implication: 'Strong formal drivers exist, supporting adoption of traceability and inspection systems'
+                implication: 'Strong policy drivers can accelerate behavioural and institutional change'
             },
             institutional: { 
                 level: 'moderate', 
+                title: 'Institutional & Governance Readiness',
                 findings: [
-                    'Mandates exist across veterinary, trade, border control, and food safety institutions',
-                    'Coordination mechanisms are improving but require clearer data stewardship roles'
+                    'Veterinary, border, inspection, and trade authorities have defined mandates but limited data-sharing mechanisms',
+                    'Coordination models and stewardship roles need formalization'
                 ],
-                implication: 'Governance modernization is needed to manage a multi-agency, data-intensive ecosystem'
+                implication: 'AITS requires a clear multi-agency governance structure and cross-institutional operating model'
             },
             adoption: { 
-                level: 'low', 
+                level: 'moderate', 
+                title: 'User & Adoption Readiness',
                 findings: [
-                    'Farmers and traders have varied digital literacy and inconsistent incentives to comply with traceability',
-                    'Inspectors and veterinarians show readiness but lack digital tools'
+                    'Farmers and traders show varying degrees of digital literacy and may lack incentives to comply',
+                    'Inspectors and veterinarians are willing but lack digital tools for real-time reporting'
                 ],
-                implication: 'Adoption will require sustained training, behavioural incentives, and change management'
+                implication: 'Adoption must be supported through training, value propositions, and behavioural incentives'
             }
         },
-        recommendations: [
-            "Establish national livestock data model and governance framework",
-            "Invest in digital infrastructure for frontline users",
-            "Introduce training, incentives, and value propositions for farmers/SMEs",
-            "Phase AI adoption: dashboards → rule-based alerts → ML models"
+        useCases: [
+            {
+                title: 'Opportunity 1 — Trusted & Traceable Livestock Value Chains (NLIS)',
+                description: 'Strengthening Zambia\'s export competitiveness requires a system capable of unique identification at birth or point of entry, recording all animal movements, and linking sanitary inspections with certification workflows.',
+                addresses: [
+                    'Data Governance → need for common standards, quality rules, and verification mechanisms',
+                    'User Adoption → providing tangible value to farmers, abattoirs, and exporters',
+                    'Regulatory Readiness → enabling compliance with OIE/Codex standards'
+                ],
+                outcome: 'A mature NLIS lays the foundation for end-to-end product integrity and improved market access.'
+            },
+            {
+                title: 'Opportunity 2 — Predictive Animal & Environmental Risk Surveillance (PLEWS)',
+                description: 'Integrated monitoring of animal health events, environmental stress, and pasture conditions reduces vulnerability to disease outbreaks and climate shocks.',
+                addresses: [
+                    'Digital Infrastructure (EO, field data, mobile tools)',
+                    'AI Readiness (progressive adoption of analytics → ML forecasting)',
+                    'Institutional Readiness (One Health coordination across agencies)'
+                ],
+                outcome: 'PLEWS transforms fragmented reporting into early-warning capability, enhancing resilience and protecting livelihoods.'
+            },
+            {
+                title: 'Opportunity 3 — Evidence-Based Policy & Enforcement (NLIP)',
+                description: 'A national livestock intelligence platform can unify upstream systems (NLIS, PLEWS, inspections, trade) to support planning, enforcement, and resource allocation.',
+                addresses: [
+                    'Interoperability gaps',
+                    'Need for a national data backbone',
+                    'Demand for dashboards and analytics within ministries',
+                    'Cross-institutional governance challenges'
+                ],
+                outcome: 'NLIP links digital transformation to tangible policy impact, positioning Zambia for long-term modernization of its livestock sector.'
+            }
         ]
     },
     ethiopia: {
@@ -400,69 +464,103 @@ function renderCaseStudiesTab() {
     const cs = caseStudies[activeCase];
     
     if (cs.status === 'active') {
+        // Strategic Context & Rationale
+        const strategicContextHTML = cs.strategicContext ? `
+            <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">1. ${cs.strategicContext.title}</h3>
+                <div class="space-y-3 text-sm text-gray-700 leading-relaxed">
+                    ${cs.strategicContext.content.map(para => `<p>${para}</p>`).join('')}
+                </div>
+            </div>
+        ` : '';
+
+        // Transformation Vision
+        const transformationVisionHTML = cs.transformationVision ? `
+            <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">2. ${cs.transformationVision.title}</h3>
+                <p class="text-sm text-gray-700 mb-4 leading-relaxed">${cs.transformationVision.overview}</p>
+                <ul class="list-disc list-inside space-y-2 mb-6 text-sm text-gray-700 ml-4">
+                    ${cs.transformationVision.objectives.map(obj => `<li>${obj}</li>`).join('')}
+                </ul>
+                <div class="mb-4">
+                    <h4 class="text-sm font-semibold text-gray-800 mb-3">Operationalized through three mutually reinforcing outputs:</h4>
+                    <div class="space-y-3">
+                        ${cs.transformationVision.outputs.map((output, idx) => `
+                            <div class="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
+                                <h5 class="font-semibold text-blue-900 mb-1">${output.name}</h5>
+                                <p class="text-sm text-gray-700">${output.description}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                <p class="text-sm text-gray-700 italic leading-relaxed">${cs.transformationVision.conclusion}</p>
+            </div>
+        ` : '';
+
+        // Readiness Assessment
+        const readinessHTML = cs.readiness ? `
+            <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">3. Readiness Assessment Summary (Technical + Social Readiness)</h3>
+                <p class="text-xs text-gray-500 mb-4 italic">A synthesis based on the six TRA domains.</p>
+                
+                <div class="mb-6">
+                    <h4 class="text-sm font-semibold text-blue-900 mb-3">A. Technical Readiness</h4>
+                    <div class="space-y-3">
+                        ${renderReadinessCard(cs.readiness.infrastructure.title, cs.readiness.infrastructure, 'server', 'border-blue-500')}
+                        ${renderReadinessCard(cs.readiness.governance.title, cs.readiness.governance, 'shield', 'border-indigo-500')}
+                        ${renderReadinessCard(cs.readiness.aiml.title, cs.readiness.aiml, 'brain', 'border-violet-500')}
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-semibold text-emerald-900 mb-3">B. Social Readiness</h4>
+                    <div class="space-y-3">
+                        ${renderReadinessCard(cs.readiness.policy.title, cs.readiness.policy, 'file', 'border-emerald-500')}
+                        ${renderReadinessCard(cs.readiness.institutional.title, cs.readiness.institutional, 'building', 'border-teal-500')}
+                        ${renderReadinessCard(cs.readiness.adoption.title, cs.readiness.adoption, 'users', 'border-cyan-500')}
+                    </div>
+                </div>
+            </div>
+        ` : '';
+
+        // Priority Use Cases
+        const useCasesHTML = cs.useCases ? `
+            <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">4. Priority Use Cases Enabled by Improved Readiness</h3>
+                <p class="text-xs text-gray-500 mb-4 italic">Recasting NLIS, PLEWS, NLIP as readiness-driven opportunity pathways.</p>
+                <div class="space-y-6">
+                    ${cs.useCases.map((useCase, idx) => `
+                        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-5 border-l-4 border-blue-500">
+                            <h4 class="font-bold text-blue-900 mb-3">${useCase.title}</h4>
+                            <p class="text-sm text-gray-700 mb-4 leading-relaxed">${useCase.description}</p>
+                            <div class="mb-4">
+                                <p class="text-xs font-semibold text-gray-600 mb-2">This directly addresses gaps in:</p>
+                                <ul class="list-disc list-inside space-y-1 text-sm text-gray-700 ml-4">
+                                    ${useCase.addresses.map(addr => `<li>${addr}</li>`).join('')}
+                                </ul>
+                            </div>
+                            <div class="bg-white rounded p-3 border-l-2 border-blue-400">
+                                <p class="text-sm text-gray-800"><span class="font-semibold">Outcome:</span> ${useCase.outcome}</p>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        ` : '';
+
         content.innerHTML = `
-            <div class="bg-white rounded-xl shadow-sm p-5 mb-6">
+            <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
                 <div class="flex items-center gap-3 mb-4">
                     <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-2xl">${cs.flag}</div>
                     <div>
-                        <h3 class="font-bold text-gray-900 text-lg">${cs.country} – ${cs.sector}</h3>
-                        <p class="text-sm text-gray-500">Digital Transformation Assessment</p>
-                    </div>
-                </div>
-                <p class="text-sm text-gray-600 mb-4">${cs.description}</p>
-                <h4 class="text-xs font-semibold text-gray-500 uppercase mb-2">Transformation Pillars</h4>
-                <div class="grid grid-cols-3 gap-3">
-                    ${cs.pillars.map(p => `
-                        <div class="bg-gray-50 rounded-lg p-3 text-center">
-                            <span class="text-xs text-gray-600">${p}</span>
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
-
-            <div class="bg-white rounded-xl shadow-sm p-5 mb-6">
-                <h4 class="font-semibold text-gray-800 mb-4">Readiness Assessment</h4>
-                
-                <div class="flex gap-6">
-                    <div class="w-48 h-48 flex-shrink-0">
-                        ${renderReadinessRadar(cs.readiness)}
-                    </div>
-                    
-                    <div class="flex-1 grid grid-cols-2 gap-4">
-                        <div>
-                            <h5 class="text-xs font-semibold text-blue-900 uppercase tracking-wide mb-2">Technical Readiness</h5>
-                            <div class="space-y-2">
-                                ${renderReadinessCard('Digital Infrastructure', cs.readiness.infrastructure, 'server', 'border-blue-500')}
-                                ${renderReadinessCard('Data Governance', cs.readiness.governance, 'shield', 'border-indigo-500')}
-                                ${renderReadinessCard('AI/ML Readiness', cs.readiness.aiml, 'brain', 'border-violet-500')}
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h5 class="text-xs font-semibold text-emerald-900 uppercase tracking-wide mb-2">Social Readiness</h5>
-                            <div class="space-y-2">
-                                ${renderReadinessCard('Policy & Regulatory', cs.readiness.policy, 'file', 'border-emerald-500')}
-                                ${renderReadinessCard('Institutional & Governance', cs.readiness.institutional, 'building', 'border-teal-500')}
-                                ${renderReadinessCard('User & Adoption', cs.readiness.adoption, 'users', 'border-cyan-500')}
-                            </div>
-                        </div>
+                        <h2 class="font-bold text-gray-900 text-xl">Case Study: ${cs.country} – ${cs.sector}</h2>
                     </div>
                 </div>
             </div>
-
-            <div class="bg-gradient-to-r from-blue-900 to-indigo-900 rounded-xl p-5 text-white">
-                <h4 class="font-semibold mb-3">Priority Recommendations</h4>
-                <div class="space-y-2">
-                    ${cs.recommendations.map(rec => `
-                        <div class="flex items-start gap-2">
-                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" class="text-emerald-400 mt-0.5 flex-shrink-0">
-                                ${iconPaths.checkCircle}
-                            </svg>
-                            <span class="text-sm text-blue-100">${rec}</span>
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
+            ${strategicContextHTML}
+            ${transformationVisionHTML}
+            ${readinessHTML}
+            ${useCasesHTML}
         `;
     } else {
         content.innerHTML = `
