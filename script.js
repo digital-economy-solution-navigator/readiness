@@ -207,7 +207,7 @@ const socialDimensions = [
         considerations: [
             "Digital, AI, industrial, sectoral strategies",
             "Regulatory requirements (food safety, traceability)",
-            "Alignment with SDGs, GDC Objective 2 (inclusive digital economy), and Objective 5 (responsible AI governance and risk management)"
+            "Alignment with broader frameworks such as: SDGs, GDC Objective 2 (inclusive digital economy), and Objective 5 (responsible AI governance and risk management)"
         ]
     },
     {
@@ -216,9 +216,9 @@ const socialDimensions = [
         description: "Institutional capacity to steward, sustain, and scale digital systems.",
         color: "border-teal-500",
         considerations: [
-            "Clear mandates and coordination mechanisms",
-            "Operational enforcement capacity",
-            "Multi-stakeholder governance models"
+            "Clear mandates, roles, and coordination mechanisms across ministries and agencies",
+            "Presence of dedicated digital transformation or data units within relevant institutions",
+            "Vertical coordination between national and sub-national levels, particularly in decentralized sectors"
         ]
     },
     {
@@ -227,9 +227,9 @@ const socialDimensions = [
         description: "Human capacity, incentives, and cultural readiness for digital tools.",
         color: "border-cyan-500",
         considerations: [
-            "Digital literacy (farmers, SMEs, regulators)",
-            "Training and change management programmes",
-            "Trust and perceived value of digital systems"
+            "Digital literacy, training, change management, and perceived value of digital tools",
+            "Financial/regulatory incentives with a gender and equity lens",
+            "Rural connectivity, mobile access, and alignment with farmer networks/cooperatives"
         ]
     }
 ];
