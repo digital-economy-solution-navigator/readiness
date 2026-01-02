@@ -190,7 +190,7 @@ const technicalDimensions = [
         description: "Suitability of data and institutions for AI development/deployment.",
         color: "border-violet-500",
         considerations: [
-            "Clean, historical, labelled datasets",
+            "Sufficient, reliable, and representative factual datasets",
             "Analytic capacity among partners",
             "Responsible AI principles and governance",
             "Clear use cases (forecasting, detection, optimization)"
@@ -207,7 +207,7 @@ const socialDimensions = [
         considerations: [
             "Digital, AI, industrial, sectoral strategies",
             "Regulatory requirements (food safety, traceability)",
-            "Alignment with SDGs, GDC Objective 2"
+            "Alignment with SDGs, GDC Objective 2 (inclusive digital economy), and Objective 5 (responsible AI governance and risk management)"
         ]
     },
     {
