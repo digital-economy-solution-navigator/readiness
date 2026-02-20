@@ -573,7 +573,7 @@ function renderCaseStudiesTab() {
                     Assessment Pending
                 </span>
                 <p class="text-gray-500 text-sm max-w-md mx-auto mb-6">
-                    The Technical Readiness Assessment for this sector is currently under development. The framework will evaluate readiness across all six dimensions.
+                    The Readiness Assessment for this sector is currently under development. The framework will evaluate readiness across all six dimensions.
                 </p>
                 
                 <h4 class="text-xs font-semibold text-gray-500 uppercase mb-3">Anticipated Transformation Pillars</h4>
