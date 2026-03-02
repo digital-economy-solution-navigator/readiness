@@ -500,8 +500,8 @@ function renderCaseStudiesTab() {
         // Readiness Assessment
         const readinessHTML = cs.readiness ? `
             <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
-                <h3 class="text-lg font-bold text-gray-900 mb-4">3. Readiness Assessment Summary (Technical + Social Readiness)</h3>
-                <p class="text-xs text-gray-500 mb-4 italic">A synthesis based on the six TRA domains.</p>
+                <h3 class="text-lg font-bold text-gray-900 mb-4">3. AISRA Summary (Technical + Social Readiness)</h3>
+                <p class="text-xs text-gray-500 mb-4 italic">A synthesis based on the six AISRA dimensions.</p>
                 
                 <div class="mb-6">
                     <h4 class="text-sm font-semibold text-blue-900 mb-3">A. Technical Readiness</h4>
@@ -573,7 +573,7 @@ function renderCaseStudiesTab() {
                     Assessment Pending
                 </span>
                 <p class="text-gray-500 text-sm max-w-md mx-auto mb-6">
-                    The Readiness Assessment for this sector is currently under development. The framework will evaluate readiness across all six dimensions.
+                    The AISRA for this sector is currently under development. It will evaluate readiness across all six dimensions.
                 </p>
                 
                 <h4 class="text-xs font-semibold text-gray-500 uppercase mb-3">Anticipated Transformation Pillars</h4>
