@@ -163,14 +163,14 @@ function renderDimensionCard(dim, index) {
                 <span class="text-xs font-medium ${c.type === 'Critical' ? 'text-red-700' : 'text-amber-700'}">[${c.type}]</span>
             </div>
             <p class="text-xs text-gray-700 mt-0.5">${c.text}</p>
-            <div class="grid grid-cols-2 gap-2 mt-2 text-[10px]">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2 text-[10px]">
                 <div class="bg-blue-50 rounded p-2"><span class="font-semibold text-blue-800">Desk:</span> ${c.deskReview}</div>
                 <div class="bg-emerald-50 rounded p-2"><span class="font-semibold text-emerald-800">Consultation:</span> ${c.consultation}</div>
             </div>
         </div>
     `).join('');
     return `
-        <div class="${dim.color} border-l-4 bg-white rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow">
+        <div class="${dim.color} border-l-4 bg-white rounded-lg shadow-sm p-3 sm:p-4 hover:shadow-md transition-shadow">
             <div class="flex items-start gap-3">
                 <div class="p-2 rounded-lg ${bgColor}">
                     <svg class="${textColor}" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -203,7 +203,7 @@ function renderSummaryDimensions() {
     const container = document.getElementById('summary-dimensions');
     if (!container) return;
     container.innerHTML = fitDimensions.map(dim => `
-        <div class="rounded-lg p-4 border ${dim.color.replace('border-', 'border-').replace('-500', '-200')} bg-white shadow-sm">
+        <div class="rounded-lg p-3 sm:p-4 border ${dim.color.replace('border-', 'border-').replace('-500', '-200')} bg-white shadow-sm">
             <h5 class="font-semibold text-gray-800 text-sm">${dim.title}</h5>
             <p class="text-xs text-gray-600 mt-1">${dim.coreQuestion}</p>
         </div>
@@ -241,11 +241,11 @@ function renderAssessmentTab() {
         { rec: "🚫 No-Go", pattern: "One or more Critical criteria = No", meaning: "A fundamental barrier exists that cannot be resolved through conditions or adaptation alone — solution is not viable in current context without structural change" }
     ];
     container.innerHTML = `
-        <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
-            <h3 class="text-lg font-bold text-gray-900 mb-4">Fit Recommendation Logic</h3>
+        <div class="bg-white rounded-xl shadow-sm p-4 sm:p-6 mb-4 sm:mb-6">
+            <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-4">Fit Recommendation Logic</h3>
             <p class="text-sm text-gray-600 mb-4">Once all criteria are assessed for a candidate solution, the response pattern determines the Fit Recommendation. No numerical scoring is required.</p>
             <div class="overflow-x-auto">
-                <table class="w-full text-sm">
+                <table class="w-full text-xs sm:text-sm min-w-[400px]">
                     <thead>
                         <tr class="border-b border-gray-200">
                             <th class="text-left py-2 font-semibold text-gray-800">Recommendation</th>
@@ -269,11 +269,11 @@ function renderAssessmentTab() {
                 <p class="text-xs text-gray-700 mt-1">If a Critical criterion is answered Partial, treat it as a potential No-Go signal and probe further before assigning a final recommendation. A Partial on a Critical criterion means the barrier may be real but not yet fully understood — use the consultation questions to determine whether it is genuinely addressable.</p>
             </div>
         </div>
-        <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
-            <h3 class="text-lg font-bold text-gray-900 mb-4">Conditions & Adaptation Register</h3>
+        <div class="bg-white rounded-xl shadow-sm p-4 sm:p-6 mb-4 sm:mb-6">
+            <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-4">Conditions & Adaptation Register</h3>
             <p class="text-sm text-gray-600 mb-4">For every criterion answered Partial or No, document a specific entry. This turns the assessment into an actionable work plan.</p>
             <div class="overflow-x-auto text-xs">
-                <table class="w-full border border-gray-200">
+                <table class="w-full border border-gray-200 min-w-[500px]">
                     <thead>
                         <tr class="bg-gray-50">
                             <th class="text-left p-2 font-semibold">Criterion</th>
@@ -291,8 +291,8 @@ function renderAssessmentTab() {
                 </table>
             </div>
         </div>
-        <div class="bg-white rounded-xl shadow-sm p-6">
-            <h3 class="text-lg font-bold text-gray-900 mb-4">Selection Guidance (Comparing 2–3 Candidates)</h3>
+        <div class="bg-white rounded-xl shadow-sm p-4 sm:p-6">
+            <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-4">Selection Guidance (Comparing 2–3 Candidates)</h3>
             <p class="text-sm text-gray-600 mb-3">The preferred solution is typically the one with the strongest fit recommendation and the fewest Critical-level barriers. Secondary factors:</p>
             <ul class="list-disc list-inside space-y-1 text-sm text-gray-600 ml-2">
                 <li><strong>Depth of Conditions Register</strong> — fewer and simpler pre-conditions favour faster deployment</li>
@@ -311,17 +311,17 @@ function renderCaseStudiesTab() {
         selector.innerHTML = Object.entries(caseStudies).map(([key, study]) => `
             <button
                 onclick="setActiveCase('${key}')"
-                class="flex-1 p-2 rounded-lg border-2 transition-all text-center ${
+                class="flex-1 min-w-[120px] sm:min-w-0 p-2 sm:p-3 rounded-lg border-2 transition-all text-center ${
                     activeCase === key 
                         ? 'border-blue-500 bg-blue-50' 
                         : 'border-gray-200 bg-white hover:border-gray-300'
                 }"
             >
-                <div class="flex items-center justify-center gap-2">
-                    <span class="text-lg">${study.flag}</span>
-                    <div class="text-left">
-                        <h5 class="font-medium text-gray-900 text-sm leading-tight">${study.country}</h5>
-                        <p class="text-xs text-gray-500 leading-tight">${study.sector}</p>
+                <div class="flex items-center justify-center gap-2 flex-col sm:flex-row">
+                    <span class="text-base sm:text-lg">${study.flag}</span>
+                    <div class="text-center sm:text-left">
+                        <h5 class="font-medium text-gray-900 text-xs sm:text-sm leading-tight">${study.country}</h5>
+                        <p class="text-[10px] sm:text-xs text-gray-500 leading-tight">${study.sector}</p>
                     </div>
                     ${study.status === 'placeholder' ? '<span class="bg-gray-200 text-gray-500 text-[9px] px-1.5 py-0.5 rounded ml-1">UPCOMING</span>' : ''}
                 </div>
@@ -360,11 +360,11 @@ function renderCaseStudiesTab() {
         ).join('');
 
         content.innerHTML = `
-            <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-2xl">${cs.flag}</div>
-                    <div>
-                        <h2 class="font-bold text-gray-900 text-xl">Case Study: ${cs.country} – ${cs.sector}</h2>
+            <div class="bg-white rounded-xl shadow-sm p-4 sm:p-6 mb-4 sm:mb-6">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-4">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-2xl shrink-0">${cs.flag}</div>
+                    <div class="min-w-0">
+                        <h2 class="font-bold text-gray-900 text-base sm:text-xl leading-tight">Case Study: ${cs.country} – ${cs.sector}</h2>
                     </div>
                 </div>
                 <p class="text-sm text-gray-600">${cs.context}</p>
@@ -372,15 +372,15 @@ function renderCaseStudiesTab() {
                     <h4 class="text-xs font-semibold text-gray-500 uppercase mb-2">Candidate Solutions Assessed</h4>
                     <div class="flex flex-wrap gap-2">
                         ${cs.candidateSolutions.map((s, i) => `
-                            <span class="bg-blue-50 text-blue-800 px-3 py-1 rounded text-sm font-medium">Solution ${s.id} — ${s.name}</span>
+                            <span class="bg-blue-50 text-blue-800 px-2 sm:px-3 py-1 rounded text-xs sm:text-sm font-medium">Solution ${s.id} — ${s.name}</span>
                         `).join('')}
                     </div>
                 </div>
             </div>
 
-            <div class="bg-white rounded-xl shadow-sm p-6 mb-6 overflow-x-auto">
-                <h3 class="text-lg font-bold text-gray-900 mb-4">Fit Comparison</h3>
-                <table class="w-full text-sm min-w-[600px]">
+            <div class="bg-white rounded-xl shadow-sm p-4 sm:p-6 mb-4 sm:mb-6 overflow-x-auto">
+                <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-4">Fit Comparison</h3>
+                <table class="w-full text-xs sm:text-sm min-w-[520px]">
                     <thead>
                         <tr class="border-b-2 border-gray-200">
                             <th class="text-left py-2 pr-4 font-semibold">Fit Dimension</th>
@@ -394,7 +394,7 @@ function renderCaseStudiesTab() {
                 </table>
             </div>
 
-            <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
+            <div class="bg-white rounded-xl shadow-sm p-4 sm:p-6 mb-4 sm:mb-6">
                 <h3 class="text-lg font-bold text-gray-900 mb-4">Preferred Solution & Rationale</h3>
                 <div class="space-y-4">
                     <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-500">
@@ -408,8 +408,8 @@ function renderCaseStudiesTab() {
                 </div>
             </div>
 
-            <div class="bg-white rounded-xl shadow-sm p-6">
-                <h3 class="text-lg font-bold text-gray-900 mb-4">Conditions Register (Solution C — Rule-Based Dashboard)</h3>
+            <div class="bg-white rounded-xl shadow-sm p-4 sm:p-6">
+                <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-4">Conditions Register (Solution C — Rule-Based Dashboard)</h3>
                 <div class="overflow-x-auto text-xs">
                     <table class="w-full border border-gray-200">
                         <thead>
@@ -446,7 +446,7 @@ function renderCaseStudiesTab() {
                     The AISRA for this sector is currently under development. It will evaluate candidate solutions across all four Fit Dimensions.
                 </p>
                 <h4 class="text-xs font-semibold text-gray-500 uppercase mb-3">Candidate Solutions Under Evaluation</h4>
-                <div class="grid grid-cols-3 gap-3 max-w-lg mx-auto">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-lg mx-auto">
                     ${cs.candidateSolutions.map(p => `
                         <div class="bg-gray-50 rounded-lg p-3 text-center border border-dashed border-gray-300">
                             <span class="text-xs text-gray-500">${p}</span>

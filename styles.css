@@ -6,3 +6,28 @@
     vertical-align: middle;
 }
 
+/* Responsive & mobile-friendly */
+html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Prevent horizontal overflow on tables */
+.overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Touch-friendly tap targets for main navigation */
+.tab-btn {
+    min-height: 40px;
+}
+
+@media (max-width: 640px) {
+    /* Tighter content on small screens */
+    .space-y-4 > * + * { margin-top: 0.75rem; }
+}
+
