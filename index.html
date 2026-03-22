@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Solution Readiness Assessment (AISRA) Framework</title>
+    <title>AI Solution Readiness Assessment (AISRA) Framework — Version 3.0</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -15,8 +15,9 @@
                 <h1 class="text-2xl font-bold text-gray-900 mb-2">
                     AI Solution Readiness Assessment (AISRA) Framework
                 </h1>
+                <p class="text-blue-700 text-sm font-medium mb-1">Version 3.0 — Solution Fit Edition</p>
                 <p class="text-gray-600 text-sm max-w-2xl mx-auto">
-                    The AISRA is a structured framework for Member States, CoEs, and technical cooperation projects to evaluate readiness for AI-enabled solutions.
+                    A structured tool that helps UNIDO project managers determine whether — and how — candidate AI solutions can successfully land in a specific country or sector context.
                 </p>
             </div>
 
@@ -37,6 +38,13 @@
                     Framework
                 </button>
                 <button
+                    onclick="setActiveTab('assessment')"
+                    class="tab-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-white text-gray-600 hover:bg-gray-100"
+                    data-tab="assessment"
+                >
+                    Assessment Process
+                </button>
+                <button
                     onclick="setActiveTab('cases')"
                     class="tab-btn px-4 py-2 rounded-lg text-sm font-medium transition-colors bg-white text-gray-600 hover:bg-gray-100"
                     data-tab="cases"
@@ -50,122 +58,86 @@
                 <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
                     <div class="space-y-4 text-sm text-gray-600 leading-relaxed">
                         <p>
-                            Artificial intelligence and digital transformation are rapidly reshaping industrial competitiveness, value chains, and innovation ecosystems. However, the digital divide remains a structural constraint—manifesting both globally (between advanced and developing economies) and domestically (between urban and rural regions, MSMEs and incumbents, and across sectors with uneven digital maturity). Without deliberate action, these gaps risk reinforcing unequal industrial outcomes and slowing progress toward inclusive and sustainable industrial development.
+                            The <strong>AISRA</strong> is a structured tool that helps UNIDO project managers determine whether — and how — candidate AI solutions can successfully land in a specific country or sector context.
                         </p>
                         <p>
-                            UNIDO's mandate — reinforced by the <span class="font-medium text-blue-900">Global Digital Compact (Objectives 2 and 5)</span> and the <span class="font-medium text-blue-900">AIM Global Alliance</span> — aims to ensure frontier technologies drive industrial transformation while reducing capability gaps within and between countries.
+                            AISRA is built on a core insight: <strong>a solution that works well in one context can fail in another, not because the technology is wrong, but because the conditions are different.</strong> AISRA makes those conditions visible and actionable.
                         </p>
                         
                         <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-4 border-l-4 border-blue-500">
-                            <h4 class="font-semibold text-blue-900 mb-2">What is AISRA?</h4>
+                            <h4 class="font-semibold text-blue-900 mb-2">What AISRA is designed to do</h4>
+                            <p class="text-gray-700 mb-3">A project manager typically enters an AISRA process with <strong>2–3 candidate solutions</strong> in mind. AISRA helps them answer three questions for each candidate:</p>
+                            <ol class="list-decimal list-inside space-y-2 text-gray-700 ml-2">
+                                <li><strong>Can it work here?</strong> — Is the country or sector context compatible with what this solution requires?</li>
+                                <li><strong>What would need to be true?</strong> — If there are gaps, what conditions must be met first?</li>
+                                <li><strong>Which solution fits best?</strong> — Across candidates, which has the strongest fit profile?</li>
+                            </ol>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg p-4 border-l-4 border-emerald-500">
+                            <h4 class="font-semibold text-emerald-900 mb-2">How it is conducted</h4>
                             <p class="text-gray-700">
-                                The AISRA provides a structured approach for technical cooperation project managers to understand readiness for AI-enabled solutions adoption in a given country or sector. It also serves as a common diagnostic layer to support the design of CoE programmes, lighthouse projects, and sectoral digital transformation initiatives.
+                                AISRA assessments combine <strong>desk review</strong> (country diagnostics, sector reports, existing data inventories) with <strong>stakeholder consultations</strong> (field interviews and workshops with government counterparts, CoE partners, and end users). Neither alone is sufficient — desk review surfaces structural conditions; consultations surface operational realities.
                             </p>
                         </div>
-                        
-                        <p>
-                            The AISRA is organized into two overarching folds — <span class="font-medium text-blue-900">Technical Readiness</span> and <span class="font-medium text-emerald-700">Social Readiness</span> — each with three dimensions. Together, they create a holistic lens to evaluate whether data can meaningfully support digital transformation.
-                        </p>
                     </div>
                 </div>
 
-                <div>
-                    <h4 class="font-semibold text-gray-800 mb-4">How AISRA Supports the CoE Network</h4>
-                    <div class="grid grid-cols-4 gap-3">
-                        <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-100 text-center">
-                            <span class="text-3xl block mb-2">🔍</span>
-                            <h5 class="font-medium text-gray-900 text-sm mb-1">Identify Gaps</h5>
-                            <p class="text-xs text-gray-500">Pinpoint gaps and enablers in national or sectoral data ecosystems</p>
-                        </div>
-                        <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-100 text-center">
-                            <span class="text-3xl block mb-2">📊</span>
-                            <h5 class="font-medium text-gray-900 text-sm mb-1">Guide Investment</h5>
-                            <p class="text-xs text-gray-500">Strategic investments in digital infrastructure, institutions, and capabilities</p>
-                        </div>
-                        <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-100 text-center">
-                            <span class="text-3xl block mb-2">⚖️</span>
-                            <h5 class="font-medium text-gray-900 text-sm mb-1">Ensure Ethics</h5>
-                            <p class="text-xs text-gray-500">AI adoption that is ethical, inclusive, and aligned with national priorities</p>
-                        </div>
-                        <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-100 text-center">
-                            <span class="text-3xl block mb-2">🚀</span>
-                            <h5 class="font-medium text-gray-900 text-sm mb-1">Enable Solutions</h5>
-                            <p class="text-xs text-gray-500">Support projects to move "from Alliance to Solutions" — AIM Global Phase II</p>
-                        </div>
+                <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
+                    <h4 class="font-semibold text-gray-800 mb-4">The Four Fit Dimensions</h4>
+                    <p class="text-sm text-gray-600 mb-4">AISRA evaluates each candidate solution against four Fit Dimensions — the factors most likely to determine whether a solution translates successfully across contexts:</p>
+                    <div class="grid grid-cols-2 gap-3" id="summary-dimensions">
+                        <!-- Populated by JS -->
                     </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm p-6">
+                    <h4 class="font-semibold text-gray-800 mb-4">Strategic Alignment</h4>
+                    <p class="text-sm text-gray-600">
+                        <span class="font-medium text-blue-900">Global Digital Compact</span> — Objectives 2 (inclusive digital economy) and 5 (responsible AI governance and risk management) • 
+                        <span class="font-medium text-blue-900">AIM Global Alliance</span> — Phase II: from Alliance to Solutions • 
+                        <span class="font-medium text-blue-900">UNIDO CoE Network</span> — Common solution fit diagnostic for technical cooperation and sectoral digital transformation
+                    </p>
                 </div>
             </div>
 
             <!-- FRAMEWORK TAB -->
             <div id="tab-framework" class="tab-content hidden">
-                <!-- Visual Framework Overview -->
+                <!-- Response Types & Criterion Classification -->
                 <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
-                    <div class="flex items-center justify-center gap-6 mb-6">
-                        <div class="flex-1 max-w-sm">
-                            <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl p-4 text-white text-center">
-                                <svg class="mx-auto mb-2" width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
-                                </svg>
-                                <h4 class="font-bold text-lg">Technical Readiness</h4>
-                                <p class="text-blue-200 text-xs mt-1">Can systems capture, govern, and leverage data for AI?</p>
-                            </div>
+                    <h4 class="font-semibold text-gray-800 mb-3">Response Types</h4>
+                    <p class="text-sm text-gray-600 mb-4">Each diagnostic criterion is answered as:</p>
+                    <div class="grid grid-cols-3 gap-3 mb-4">
+                        <div class="rounded-lg p-3 bg-emerald-50 border border-emerald-200 text-center">
+                            <span class="font-semibold text-emerald-800 text-sm">Yes</span>
+                            <p class="text-xs text-gray-600 mt-1">Condition is met in the current context</p>
                         </div>
-                        <div class="text-gray-300 text-3xl font-light">+</div>
-                        <div class="flex-1 max-w-sm">
-                            <div class="bg-gradient-to-br from-emerald-600 to-teal-700 rounded-xl p-4 text-white text-center">
-                                <svg class="mx-auto mb-2" width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                                </svg>
-                                <h4 class="font-bold text-lg">Social Readiness</h4>
-                                <p class="text-emerald-200 text-xs mt-1">Will people, policies, and institutions support adoption?</p>
-                            </div>
+                        <div class="rounded-lg p-3 bg-amber-50 border border-amber-200 text-center">
+                            <span class="font-semibold text-amber-800 text-sm">Partial</span>
+                            <p class="text-xs text-gray-600 mt-1">Condition is partially met; a gap exists but is addressable</p>
+                        </div>
+                        <div class="rounded-lg p-3 bg-red-50 border border-red-200 text-center">
+                            <span class="font-semibold text-red-800 text-sm">No</span>
+                            <p class="text-xs text-gray-600 mt-1">Condition is not met; a significant barrier exists</p>
                         </div>
                     </div>
-                    
-                    <!-- Six Dimensions Grid -->
-                    <div class="grid grid-cols-6 gap-2">
-                        <div class="rounded-lg p-3 text-center bg-blue-50 border border-blue-200">
-                            <svg class="mx-auto mb-1 text-blue-600" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
-                            </svg>
-                            <p class="text-xs font-medium text-blue-900">Digital Infrastructure</p>
-                        </div>
-                        <div class="rounded-lg p-3 text-center bg-blue-50 border border-blue-200">
-                            <svg class="mx-auto mb-1 text-blue-600" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                            </svg>
-                            <p class="text-xs font-medium text-blue-900">Data Governance</p>
-                        </div>
-                        <div class="rounded-lg p-3 text-center bg-blue-50 border border-blue-200">
-                            <svg class="mx-auto mb-1 text-blue-600" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                            </svg>
-                            <p class="text-xs font-medium text-blue-900">AI/ML Readiness</p>
-                        </div>
-                        <div class="rounded-lg p-3 text-center bg-emerald-50 border border-emerald-200">
-                            <svg class="mx-auto mb-1 text-emerald-600" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                            </svg>
-                            <p class="text-xs font-medium text-emerald-900">Policy & Regulatory</p>
-                        </div>
-                        <div class="rounded-lg p-3 text-center bg-emerald-50 border border-emerald-200">
-                            <svg class="mx-auto mb-1 text-emerald-600" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                            </svg>
-                            <p class="text-xs font-medium text-emerald-900">Institutional & Governance</p>
-                        </div>
-                        <div class="rounded-lg p-3 text-center bg-emerald-50 border border-emerald-200">
-                            <svg class="mx-auto mb-1 text-emerald-600" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                            </svg>
-                            <p class="text-xs font-medium text-emerald-900">User & Adoption</p>
-                        </div>
+                    <h4 class="font-semibold text-gray-800 mb-3">Criterion Classification</h4>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><strong class="text-red-700">Critical criteria</strong> — If answered No, the solution faces a fundamental barrier. A No on a Critical criterion triggers an Adapt or No-Go recommendation.</p>
+                        <p><strong class="text-amber-700">Enabling criteria</strong> — If answered No or Partial, a gap exists but can be addressed through targeted investment or pre-conditions. These inform a Go with Conditions recommendation.</p>
                     </div>
                 </div>
 
-                <!-- Detailed Dimensions - Expandable -->
+                <!-- Four Fit Dimensions - Expandable -->
                 <div class="space-y-3" id="dimensions-list">
                     <!-- Dimensions will be inserted here by JavaScript -->
+                </div>
+            </div>
+
+            <!-- ASSESSMENT PROCESS TAB -->
+            <div id="tab-assessment" class="tab-content hidden">
+                <div class="space-y-6" id="assessment-content">
+                    <!-- Populated by JavaScript -->
                 </div>
             </div>
 
